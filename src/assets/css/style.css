@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
 
 :root {
-  --background-color: #1a1a2e;
-  --container-color: #16213e;
-  --primary-color: #0f3460;
-  --accent-color: #e94560;
-  --text-color: #e0e0e0;
-  --input-background: #0f3460;
-  --input-border: #1a1a2e;
-  --button-background: #e94560;
-  --button-hover-background: #d81f45;
-  --button-text-color: #fff;
+  --background-color: #ffffff; /* Light background */
+  --container-color: rgba(255, 255, 255, 0.9); /* Semi-transparent container */
+  --primary-color: #2d2d2d; /* Dark text color */
+  --accent-color: #4caf50; /* Green accent color */
+  --text-color: #2d2d2d; /* Dark text */
+  --input-background: rgba(255, 255, 255, 0.8); /* Light input background */
+  --input-border: #cccccc; /* Light border */
+  --button-background: #4caf50; /* Green button */
+  --button-hover-background: #45a049; /* Darker green on hover */
+  --button-text-color: #ffffff; /* White text for buttons */
 }
 
 * {
@@ -27,17 +27,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Better responsiveness */
+  padding: 20px;
 }
 
 .container {
   background-color: var(--container-color);
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
   text-align: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 h1 {
@@ -55,6 +56,7 @@ h1 {
   margin-bottom: 25px;
   color: var(--text-color);
   border: 1px solid var(--input-border);
+  word-break: break-all; /* Ensures long text wraps correctly */
 }
 
 label {
@@ -65,11 +67,6 @@ label {
   color: var(--text-color);
 }
 
-input[type="number"],
-input[type="checkbox"] {
-  margin-right: 10px;
-}
-
 input[type="number"] {
   width: 100%;
   padding: 12px;
@@ -78,10 +75,13 @@ input[type="number"] {
   border: 1px solid var(--input-border);
   background-color: var(--input-background);
   color: var(--text-color);
+  margin-bottom: 15px;
 }
 
 input[type="checkbox"] {
   transform: scale(1.2);
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .generate-password {
@@ -95,9 +95,78 @@ input[type="checkbox"] {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
 }
 
 .generate-password:hover {
   background-color: var(--button-hover-background);
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent footer */
+  backdrop-filter: blur(10px); /* Glass effect */
+  text-align: center;
+  padding: 8px 0; /* Reduced padding for a slim appearance */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Light border for contrast */
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease; /* Smooth background change on hover */
+}
+
+footer:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+}
+
+footer p {
+  margin: 0;
+  color: #333; /* Dark text for footer */
+  font-size: 14px;
+}
+
+footer p span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer .share {
+  margin-top: 8px;
+}
+
+footer .share a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer .share img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .share img:hover {
+  transform: scale(1.2); /* More pronounced hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .generated-password {
+    font-size: 1.4em;
+    padding: 12px;
+  }
+
+  .generate-password {
+    font-size: 1.1em;
+  }
 }

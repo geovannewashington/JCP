@@ -1,4 +1,5 @@
 import createPassword from './generators';
+import '../assets/css/style.css';
 
 const generatedPasswordEl = document.querySelector('.generated-password');
 

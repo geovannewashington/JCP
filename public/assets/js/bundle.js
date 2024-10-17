@@ -60,6 +60,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _generators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generators */ "./src/modules/generators.js");
+/* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/css/style.css */ "./src/assets/css/style.css");
+
 
 var generatedPasswordEl = document.querySelector('.generated-password');
 var passwordLengthEl = document.querySelector('.password-length');
@@ -102,16 +104,16 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `:root {
-  --background-color: #1a1a2e;
-  --container-color: #16213e;
-  --primary-color: #0f3460;
-  --accent-color: #e94560;
-  --text-color: #e0e0e0;
-  --input-background: #0f3460;
-  --input-border: #1a1a2e;
-  --button-background: #e94560;
-  --button-hover-background: #d81f45;
-  --button-text-color: #fff;
+  --background-color: #ffffff; /* Light background */
+  --container-color: rgba(255, 255, 255, 0.9); /* Semi-transparent container */
+  --primary-color: #2d2d2d; /* Dark text color */
+  --accent-color: #4caf50; /* Green accent color */
+  --text-color: #2d2d2d; /* Dark text */
+  --input-background: rgba(255, 255, 255, 0.8); /* Light input background */
+  --input-border: #cccccc; /* Light border */
+  --button-background: #4caf50; /* Green button */
+  --button-hover-background: #45a049; /* Darker green on hover */
+  --button-text-color: #ffffff; /* White text for buttons */
 }
 
 * {
@@ -128,17 +130,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Better responsiveness */
+  padding: 20px;
 }
 
 .container {
   background-color: var(--container-color);
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
   text-align: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 h1 {
@@ -156,6 +159,7 @@ h1 {
   margin-bottom: 25px;
   color: var(--text-color);
   border: 1px solid var(--input-border);
+  word-break: break-all; /* Ensures long text wraps correctly */
 }
 
 label {
@@ -166,11 +170,6 @@ label {
   color: var(--text-color);
 }
 
-input[type="number"],
-input[type="checkbox"] {
-  margin-right: 10px;
-}
-
 input[type="number"] {
   width: 100%;
   padding: 12px;
@@ -179,10 +178,13 @@ input[type="number"] {
   border: 1px solid var(--input-border);
   background-color: var(--input-background);
   color: var(--text-color);
+  margin-bottom: 15px;
 }
 
 input[type="checkbox"] {
   transform: scale(1.2);
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .generate-password {
@@ -196,13 +198,82 @@ input[type="checkbox"] {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
 }
 
 .generate-password:hover {
   background-color: var(--button-hover-background);
+  transform: translateY(-3px); /* Slight lift on hover */
 }
-`, "",{"version":3,"sources":["webpack://./src/assets/css/style.css"],"names":[],"mappings":"AAEA;EACE,2BAA2B;EAC3B,0BAA0B;EAC1B,wBAAwB;EACxB,uBAAuB;EACvB,qBAAqB;EACrB,2BAA2B;EAC3B,uBAAuB;EACvB,4BAA4B;EAC5B,kCAAkC;EAClC,yBAAyB;AAC3B;;AAEA;EACE,sBAAsB;EACtB,SAAS;EACT,UAAU;EACV,aAAa;AACf;;AAEA;EACE,kCAAkC;EAClC,yCAAyC;EACzC,wBAAwB;EACxB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,aAAa;AACf;;AAEA;EACE,wCAAwC;EACxC,aAAa;EACb,mBAAmB;EACnB,0CAA0C;EAC1C,kBAAkB;EAClB,WAAW;EACX,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,gBAAgB;EAChB,0BAA0B;EAC1B,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,yCAAyC;EACzC,kBAAkB;EAClB,mBAAmB;EACnB,wBAAwB;EACxB,qCAAqC;AACvC;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,gBAAgB;EAChB,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;;EAEE,kBAAkB;AACpB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,qCAAqC;EACrC,yCAAyC;EACzC,wBAAwB;AAC1B;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,gBAAgB;EAChB,gBAAgB;EAChB,+BAA+B;EAC/B,0CAA0C;EAC1C,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,iCAAiC;AACnC;;AAEA;EACE,gDAAgD;AAClD","sourcesContent":["@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');\n\n:root {\n  --background-color: #1a1a2e;\n  --container-color: #16213e;\n  --primary-color: #0f3460;\n  --accent-color: #e94560;\n  --text-color: #e0e0e0;\n  --input-background: #0f3460;\n  --input-border: #1a1a2e;\n  --button-background: #e94560;\n  --button-hover-background: #d81f45;\n  --button-text-color: #fff;\n}\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  outline: none;\n}\n\nbody {\n  font-family: 'Poppins', sans-serif;\n  background-color: var(--background-color);\n  color: var(--text-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n\n.container {\n  background-color: var(--container-color);\n  padding: 40px;\n  border-radius: 12px;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);\n  text-align: center;\n  width: 100%;\n  max-width: 400px;\n}\n\nh1 {\n  font-size: 2.2em;\n  font-weight: 500;\n  color: var(--accent-color);\n  margin-bottom: 20px;\n}\n\n.generated-password {\n  font-size: 1.6em;\n  padding: 15px;\n  background-color: var(--input-background);\n  border-radius: 8px;\n  margin-bottom: 25px;\n  color: var(--text-color);\n  border: 1px solid var(--input-border);\n}\n\nlabel {\n  display: block;\n  text-align: left;\n  font-weight: 500;\n  margin: 15px 0 5px;\n  color: var(--text-color);\n}\n\ninput[type=\"number\"],\ninput[type=\"checkbox\"] {\n  margin-right: 10px;\n}\n\ninput[type=\"number\"] {\n  width: 100%;\n  padding: 12px;\n  font-size: 1em;\n  border-radius: 8px;\n  border: 1px solid var(--input-border);\n  background-color: var(--input-background);\n  color: var(--text-color);\n}\n\ninput[type=\"checkbox\"] {\n  transform: scale(1.2);\n}\n\n.generate-password {\n  width: 100%;\n  padding: 15px;\n  font-size: 1.2em;\n  font-weight: 700;\n  color: var(--button-text-color);\n  background-color: var(--button-background);\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  margin-top: 20px;\n  transition: background-color 0.3s;\n}\n\n.generate-password:hover {\n  background-color: var(--button-hover-background);\n}\n"],"sourceRoot":""}]);
+
+footer {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent footer */
+  backdrop-filter: blur(10px); /* Glass effect */
+  text-align: center;
+  padding: 8px 0; /* Reduced padding for a slim appearance */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Light border for contrast */
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease; /* Smooth background change on hover */
+}
+
+footer:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+}
+
+footer p {
+  margin: 0;
+  color: #333; /* Dark text for footer */
+  font-size: 14px;
+}
+
+footer p span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer .share {
+  margin-top: 8px;
+}
+
+footer .share a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer .share img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .share img:hover {
+  transform: scale(1.2); /* More pronounced hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .generated-password {
+    font-size: 1.4em;
+    padding: 12px;
+  }
+
+  .generate-password {
+    font-size: 1.1em;
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/assets/css/style.css"],"names":[],"mappings":"AAEA;EACE,2BAA2B,EAAE,qBAAqB;EAClD,2CAA2C,EAAE,+BAA+B;EAC5E,wBAAwB,EAAE,oBAAoB;EAC9C,uBAAuB,EAAE,uBAAuB;EAChD,qBAAqB,EAAE,cAAc;EACrC,4CAA4C,EAAE,2BAA2B;EACzE,uBAAuB,EAAE,iBAAiB;EAC1C,4BAA4B,EAAE,iBAAiB;EAC/C,kCAAkC,EAAE,0BAA0B;EAC9D,4BAA4B,EAAE,2BAA2B;AAC3D;;AAEA;EACE,sBAAsB;EACtB,SAAS;EACT,UAAU;EACV,aAAa;AACf;;AAEA;EACE,kCAAkC;EAClC,yCAAyC;EACzC,wBAAwB;EACxB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,iBAAiB,EAAE,0BAA0B;EAC7C,aAAa;AACf;;AAEA;EACE,wCAAwC;EACxC,kBAAkB;EAClB,mBAAmB;EACnB,0CAA0C,EAAE,2BAA2B;EACvE,kBAAkB;EAClB,WAAW;EACX,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,gBAAgB;EAChB,0BAA0B;EAC1B,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,yCAAyC;EACzC,kBAAkB;EAClB,mBAAmB;EACnB,wBAAwB;EACxB,qCAAqC;EACrC,qBAAqB,EAAE,sCAAsC;AAC/D;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,gBAAgB;EAChB,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;EACE,WAAW;EACX,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,qCAAqC;EACrC,yCAAyC;EACzC,wBAAwB;EACxB,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;EACrB,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,gBAAgB;EAChB,gBAAgB;EAChB,+BAA+B;EAC/B,0CAA0C;EAC1C,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,2DAA2D,EAAE,4BAA4B;AAC3F;;AAEA;EACE,gDAAgD;EAChD,2BAA2B,EAAE,yBAAyB;AACxD;;AAEA;EACE,0CAA0C,EAAE,4BAA4B;EACxE,2BAA2B,EAAE,iBAAiB;EAC9C,kBAAkB;EAClB,cAAc,EAAE,0CAA0C;EAC1D,WAAW;EACX,eAAe;EACf,SAAS;EACT,OAAO;EACP,wCAAwC,EAAE,8BAA8B;EACxE,8BAA8B;EAC9B,sCAAsC,EAAE,sCAAsC;AAChF;;AAEA;EACE,wCAAwC,EAAE,0BAA0B;AACtE;;AAEA;EACE,SAAS;EACT,WAAW,EAAE,yBAAyB;EACtC,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,iBAAiB;AACnB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,qBAAqB;EACrB,aAAa;AACf;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,+BAA+B;AACjC;;AAEA;EACE,qBAAqB,EAAE,iCAAiC;AAC1D;;AAEA,2BAA2B;AAC3B;EACE;IACE,kBAAkB;EACpB;;EAEA;IACE,gBAAgB;EAClB;;EAEA;IACE,gBAAgB;IAChB,aAAa;EACf;;EAEA;IACE,gBAAgB;EAClB;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');\n\n:root {\n  --background-color: #ffffff; /* Light background */\n  --container-color: rgba(255, 255, 255, 0.9); /* Semi-transparent container */\n  --primary-color: #2d2d2d; /* Dark text color */\n  --accent-color: #4caf50; /* Green accent color */\n  --text-color: #2d2d2d; /* Dark text */\n  --input-background: rgba(255, 255, 255, 0.8); /* Light input background */\n  --input-border: #cccccc; /* Light border */\n  --button-background: #4caf50; /* Green button */\n  --button-hover-background: #45a049; /* Darker green on hover */\n  --button-text-color: #ffffff; /* White text for buttons */\n}\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  outline: none;\n}\n\nbody {\n  font-family: 'Poppins', sans-serif;\n  background-color: var(--background-color);\n  color: var(--text-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh; /* Better responsiveness */\n  padding: 20px;\n}\n\n.container {\n  background-color: var(--container-color);\n  padding: 40px 30px;\n  border-radius: 12px;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */\n  text-align: center;\n  width: 100%;\n  max-width: 450px;\n}\n\nh1 {\n  font-size: 2.2em;\n  font-weight: 500;\n  color: var(--accent-color);\n  margin-bottom: 20px;\n}\n\n.generated-password {\n  font-size: 1.6em;\n  padding: 15px;\n  background-color: var(--input-background);\n  border-radius: 8px;\n  margin-bottom: 25px;\n  color: var(--text-color);\n  border: 1px solid var(--input-border);\n  word-break: break-all; /* Ensures long text wraps correctly */\n}\n\nlabel {\n  display: block;\n  text-align: left;\n  font-weight: 500;\n  margin: 15px 0 5px;\n  color: var(--text-color);\n}\n\ninput[type=\"number\"] {\n  width: 100%;\n  padding: 12px;\n  font-size: 1em;\n  border-radius: 8px;\n  border: 1px solid var(--input-border);\n  background-color: var(--input-background);\n  color: var(--text-color);\n  margin-bottom: 15px;\n}\n\ninput[type=\"checkbox\"] {\n  transform: scale(1.2);\n  vertical-align: middle;\n  margin-right: 10px;\n}\n\n.generate-password {\n  width: 100%;\n  padding: 15px;\n  font-size: 1.2em;\n  font-weight: 700;\n  color: var(--button-text-color);\n  background-color: var(--button-background);\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  margin-top: 20px;\n  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */\n}\n\n.generate-password:hover {\n  background-color: var(--button-hover-background);\n  transform: translateY(-3px); /* Slight lift on hover */\n}\n\nfooter {\n  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent footer */\n  backdrop-filter: blur(10px); /* Glass effect */\n  text-align: center;\n  padding: 8px 0; /* Reduced padding for a slim appearance */\n  width: 100%;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Light border for contrast */\n  font-family: Arial, sans-serif;\n  transition: background-color 0.3s ease; /* Smooth background change on hover */\n}\n\nfooter:hover {\n  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */\n}\n\nfooter p {\n  margin: 0;\n  color: #333; /* Dark text for footer */\n  font-size: 14px;\n}\n\nfooter p span {\n  font-size: 18px;\n  font-weight: bold;\n}\n\nfooter .share {\n  margin-top: 8px;\n}\n\nfooter .share a {\n  text-decoration: none;\n  margin: 0 8px;\n}\n\nfooter .share img {\n  width: 30px;\n  height: 30px;\n  transition: transform 0.3s ease;\n}\n\nfooter .share img:hover {\n  transform: scale(1.2); /* More pronounced hover effect */\n}\n\n/* Responsive adjustments */\n@media (max-width: 480px) {\n  .container {\n    padding: 30px 20px;\n  }\n\n  h1 {\n    font-size: 1.8em;\n  }\n\n  .generated-password {\n    font-size: 1.4em;\n    padding: 12px;\n  }\n\n  .generate-password {\n    font-size: 1.1em;\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
